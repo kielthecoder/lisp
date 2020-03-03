@@ -19,7 +19,14 @@
 
 (defun element-at (lst k)
   (if (null lst)
-      nil)
-  (if (= k 1)
-      (car lst)
-      (element-at (cdr lst) (1- k))))
+      nil
+      (if (= k 1)
+	  (car lst)
+	  (element-at (cdr lst) (1- k)))))
+
+;; P04 - Find the number of elements of a list
+
+(defun my-length (lst)
+  (if (null lst)
+      0
+      (1+ (my-length (cdr lst)))))
