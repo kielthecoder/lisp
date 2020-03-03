@@ -55,12 +55,3 @@
 	(if (listp i)
 	    (append (my-flatten i) (my-flatten rest))
 	    (append (cons i nil) (my-flatten rest))))))
-
-(defun my-flatten-2 (lst)
-  (labels ((rec (l)
-	     (if (null l)
-		 nil
-		 (if (listp (car l))
-		     (append (rec (car l)) (rec (cdr l)))
-		     (append (cons (car l) nil) (rec (cdr l)))))))
-    (rec lst)))
