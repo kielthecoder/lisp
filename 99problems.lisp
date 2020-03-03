@@ -8,4 +8,9 @@
       lst
       (my-last (cdr lst))))
 
-;;
+;; P02 - Find the last but one box of a list
+
+(defun my-last-but-one (lst)
+  (if (null (cdr (cdr lst)))
+      lst
+      (my-last-but-one (cdr lst))))
