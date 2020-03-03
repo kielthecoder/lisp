@@ -30,3 +30,12 @@
   (if (null lst)
       0
       (1+ (my-length (cdr lst)))))
+
+;; P05 - Reverse a list
+
+(defun my-reverse (lst)
+  (labels ((rec (l m)
+	     (if (null l)
+		 m
+		 (rec (cdr l) (cons (car l) m)))))
+    (rec lst nil)))
