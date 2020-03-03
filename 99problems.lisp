@@ -14,3 +14,12 @@
   (if (null (cdr (cdr lst)))
       lst
       (my-last-but-one (cdr lst))))
+
+;; P03 - Find the K'th element of a list
+
+(defun element-at (lst k)
+  (if (null lst)
+      nil)
+  (if (= k 1)
+      (car lst)
+      (element-at (cdr lst) (1- k))))
