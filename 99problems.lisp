@@ -44,3 +44,23 @@
 
 (defun palindrome-p (lst)
   (equal lst (reverse lst)))
+
+;; P07 - Flatten a nested list structure
+
+(defun my-flatten (lst)
+  (if (null lst)
+      nil
+      (let ((i (car lst))
+	    (rest (cdr lst)))
+	(if (listp i)
+	    (append (my-flatten i) (my-flatten rest))
+	    (append (cons i nil) (my-flatten rest))))))
+
+(defun my-flatten-2 (lst)
+  (labels ((rec (l)
+	     (if (null l)
+		 nil
+		 (if (listp (car l))
+		     (append (rec (car l)) (rec (cdr l)))
+		     (append (cons (car l) nil) (rec (cdr l)))))))
+    (rec lst)))
