@@ -39,3 +39,8 @@
 		 m
 		 (rec (cdr l) (cons (car l) m)))))
     (rec lst nil)))
+
+;; P06 - Find out whether a list is a palindrome
+
+(defun palindrome-p (lst)
+  (equal lst (reverse lst)))
